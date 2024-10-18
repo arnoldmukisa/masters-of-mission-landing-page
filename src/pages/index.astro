@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PodcastList, { imageUrl, podcastTitle, podcastDescription } from '../components/PodcastList.astro';
+---
+
+<Layout title={podcastTitle}>
+	<Header imageUrl={imageUrl} title={podcastTitle} description={podcastDescription} />
+	<main>
+		<PodcastList />
+	</main>
+</Layout>

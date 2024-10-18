@@ -1,0 +1,85 @@
+---
+const { imageUrl, title, description } = Astro.props;
+---
+<header>
+  <div class="header-content">
+    {imageUrl && <img src={imageUrl} alt={title} class="podcast-image" />}
+    <div class="podcast-info">
+      <h1>{title}</h1>
+      <p class="author">By <a href="https://helpyousponsor.com" target="_blank" rel="noopener noreferrer">HelpYouSponsor</a></p>
+      <p class="description">{description}</p>
+      <div class="subscribe-links">
+        <a href="https://podcasts.apple.com/ph/podcast/masters-of-mission/id1768233574" target="_blank" rel="noopener noreferrer" class="subscribe-button apple">Apple Podcasts</a>
+        <a href="https://podcasters.spotify.com/pod/show/helpyousponsor" target="_blank" rel="noopener noreferrer" class="subscribe-button spotify">Spotify</a>
+        <a href="https://www.youtube.com/@helpyousponsor1/podcasts" target="_blank" rel="noopener noreferrer" class="subscribe-button youtube">YouTube</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: #ffd700;
+    padding: 2rem;
+    text-align: center;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .podcast-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .podcast-info {
+    text-align: left;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  .author {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  .author a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .description {
+    margin-bottom: 1rem;
+  }
+  .subscribe-links {
+    display: flex;
+    gap: 1rem;
+  }
+  .subscribe-button {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: opacity 0.3s;
+  }
+  .subscribe-button:hover {
+    opacity: 0.8;
+  }
+  .apple {
+    background-color: #8e44ad;
+  }
+  .spotify {
+    background-color: #1db954;
+  }
+  .youtube {
+    background-color: #ff0000;
+  }
+</style>
